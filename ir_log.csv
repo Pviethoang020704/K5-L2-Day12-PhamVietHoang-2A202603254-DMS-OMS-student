@@ -1,0 +1,6 @@
+frame_id,source,phenomenon,affected_field,effect_on_label
+S03_ir,IR_sim,"Diff ghi child_seat.occupied mine=yes, peer=unknown; CSV không cho biết bên trong ghế có nhìn rõ hay không (cần kiểm tra trong CVAT).","child_seat.occupied","GUIDE chỉ cho no/unknown; không dùng yes. Chưa kết luận giá trị đúng trước khi xem ảnh."
+S01_ir,IR_sim,"Diff ghi hộp object chỉ có ở mine (IoU=0.00); nguyên nhân hình ảnh chưa được xác minh.","object.box","Mở ảnh IR-sim và RGB cùng cảnh trong CVAT để xác nhận có vật và hộp ôm sát; không suy hiện tượng quang học từ diff."
+S07_ir,IR_sim,"Diff ghi infant_seat.facing mine=front, peer=rear; chưa xem ảnh để xác định hướng ghế.","infant_seat.facing","Kiểm tra hình dạng/hướng ghế trong CVAT; hỏi coach nếu chưa rõ. Không coi IR-sim là bằng chứng về phản xạ IR thật."
+D01,real_IR,"Diff ghi eye_left/eye_right mine=open, peer=unknown; không có bằng chứng trực quan trong log về khe mắt hoặc phản xạ.","face.eye_left; face.eye_right","Kiểm tra từng mắt trong CVAT; dùng unknown nếu không phân biệt được khe mở với che khuất/phản xạ."
+D05,real_IR,"Diff ghi bất đồng về phone.box (IoU=0.23 và hộp chỉ có ở peer); chưa xác minh vật thể có thấy cạnh, góc hoặc màn hình.","phone.box","Kiểm tra ảnh trong CVAT theo GUIDE §4.7; chỉ gán phone khi thấy đặc điểm điện thoại, chưa thể kết luận từ diff."
